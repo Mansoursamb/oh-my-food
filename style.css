@@ -13,10 +13,6 @@
   color: var(--main-color);
 }
 
-header {
-  font-family: "shrikhand";
-}
-
 body {
   display: flex;
   justify-content: center;
@@ -32,9 +28,33 @@ body {
   box-sizing: border-box;
 }
 
-h1 {
-  background-color: aqua;
+header {
+  height: 113px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+header .header {
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+}
+header .header h1 {
   font-family: "shrikhand";
+  font-size: 30px;
+}
+header .location {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+header p {
+  margin-left: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
