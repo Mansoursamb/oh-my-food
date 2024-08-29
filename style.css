@@ -1,5 +1,40 @@
+* {
+  font-family: "roboto", italic;
+}
+
+:root {
+  --main-color: #0065fc;
+  --main-bg-color: #f2f2f2;
+  --filter-bg-color: #deebff;
+  --border-color: #d9d9d9;
+}
+
+.fa-solid {
+  color: var(--main-color);
+}
+
+header {
+  font-family: "shrikhand";
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.main-container {
+  width: 100%;
+  margin: auto;
+  max-width: 1440px;
+  min-width: 350px;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
 h1 {
-  background-color: red;
+  background-color: aqua;
+  font-family: "shrikhand";
 }
 
 /*# sourceMappingURL=style.css.map */
