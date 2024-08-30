@@ -3,7 +3,7 @@
 }
 
 :root {
-  --main-color: #0065fc;
+  --main-color: light rgba(241, 227, 227, 0.911);
   --main-bg-color: #f2f2f2;
   --filter-bg-color: #deebff;
   --border-color: #d9d9d9;
@@ -24,7 +24,7 @@ body {
   margin: auto;
   max-width: 1440px;
   min-width: 350px;
-  padding: 0 50px;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -40,21 +40,128 @@ header .header {
   width: 100%;
   text-align: center;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  z-index: 1;
 }
 header .header h1 {
   font-family: "shrikhand";
   font-size: 30px;
+  cursor: pointer;
 }
 header .location {
   display: flex;
   flex-direction: row;
+  background-color: #eaeaea;
   height: 50px;
   width: 100%;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
 }
-header p {
+header h2 {
   margin-left: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+header i {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.infos {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(242, 242, 242, 0.4784313725);
+  text-align: center;
+  gap: 10px;
+}
+.infos h2 {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 0px;
+  margin-top: 50px;
+}
+.infos p {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21.09px;
+  color: rgb(53, 53, 53);
+  margin-top: 0px;
+}
+
+.btn {
+  height: 50px;
+  width: 218px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-gradient {
+  background-image: linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+.btn-gradient:hover {
+  transform: scale(1.04);
+  transition: 0.2s;
+}
+
+.fonctionnement h2 {
+  margin: 50px 20px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.fonctions ul {
+  counter-reset: steps;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+}
+.fonctions ul li {
+  list-style-type: none;
+  width: 335px;
+  height: 73px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 20px;
+  background-color: rgba(242, 242, 242, 0.4784313725);
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.fonctions ul li::before {
+  content: counter(steps);
+  counter-increment: steps;
+  color: white;
+  background-color: rgb(147, 86, 220);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 30%;
+  right: 3%;
+}
+.fonctions ul li:hover {
+  transform: scale(1.04);
+  transition: 0.2s;
+}
+.fonctions ul li i {
+  margin-right: 40px;
+  font-size: 18px;
+}
+.fonctions ul li #store {
+  color: rgb(147, 86, 220);
 }
 
 /*# sourceMappingURL=style.css.map */
