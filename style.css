@@ -204,11 +204,13 @@ header i {
 }
 .restaurants .card {
   height: 251px;
-  padding: 10px;
+  padding-bottom: 20px;
   max-width: 500px;
   background-color: white;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
   margin-bottom: 30px;
 }
 .restaurants .card img {
@@ -217,11 +219,11 @@ header i {
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  margin: 0;
 }
 .restaurants .card .card-content {
   display: flex;
   justify-content: space-between;
+  padding-left: 10px;
   align-items: center;
 }
 .restaurants .card .card-content .card-text .card-title {
