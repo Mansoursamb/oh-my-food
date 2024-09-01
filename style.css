@@ -133,6 +133,11 @@ header i {
   gap: 25px;
   height: 400px;
 }
+@media only screen and (min-width: 800px) and (max-width: 1440px) {
+  .fonctions ul {
+    flex-direction: row;
+  }
+}
 .fonctions ul li {
   list-style-type: none;
   width: 100%;
@@ -171,6 +176,13 @@ header i {
   color: rgb(147, 86, 220);
 }
 
+.rest-tit h2 {
+  margin: 50px 20px;
+  font-size: 24px;
+  font-weight: 700;
+  position: static;
+}
+
 .restaurants {
   display: flex;
   flex-direction: column;
@@ -179,20 +191,12 @@ header i {
   gap: 20px;
   align-items: center;
 }
-.restaurants h2 {
-  display: block;
-  margin: 50px 20px;
-  font-size: 24px;
-  font-weight: 700;
-  position: static;
+@media only screen and (min-width: 800px) and (max-width: 1440px) {
+  .restaurants {
+    flex-direction: row;
+  }
 }
 .restaurants .new {
-  border: 2px solid red;
-  position: relative;
-}
-.restaurants .new::before {
-  content: "nouveau";
-  position: absolute;
   height: 29px;
   width: 80px;
   background-color: rgb(153, 226, 208);
@@ -205,13 +209,18 @@ header i {
 .restaurants .card {
   height: 251px;
   padding-bottom: 20px;
-  max-width: 500px;
+  max-width: 375px;
   background-color: white;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   margin-bottom: 30px;
+}
+@media only screen and (min-width: 800px) and (max-width: 1440px) {
+  .restaurants .card {
+    width: 100%;
+  }
 }
 .restaurants .card img {
   width: 100%;
@@ -252,8 +261,27 @@ footer {
   color: white;
   padding: 40px;
 }
+@media only screen and (min-width: 800px) and (max-width: 1440px) {
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+    align-items: flex-start;
+    padding-top: 50px;
+  }
+}
 footer h2 {
   font-family: "shrikhand";
+}
+@media only screen and (min-width: 800px) and (max-width: 1440px) {
+  footer div {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+  }
 }
 footer p {
   font-size: 20px;
