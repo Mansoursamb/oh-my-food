@@ -1,3 +1,4 @@
+@import "./resto1.scss";
 * {
   font-family: "roboto", italic;
 }
@@ -131,7 +132,7 @@ header {
   text-align: center;
   gap: 25px;
   height: 400px;
-  @media only screen and (min-width: 800px) and (max-width: 1600px) {
+  @media only screen and (min-width: 800px) and (max-width: 2600px) {
     flex-direction: row;
   }
   li {
@@ -141,7 +142,7 @@ header {
     height: 73px;
     font-size: 16px;
     font-weight: 500;
-
+    cursor: pointer;
     border-radius: 20px;
     background-color: #f2f2f27a;
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -162,7 +163,7 @@ header {
     }
     &:hover {
       transform: scale(1.04);
-      transition: 0.2s;
+      transition: 0.3s;
     }
 
     i {
@@ -210,7 +211,11 @@ header {
     .card {
       height: 251px;
       padding-bottom: 20px;
-
+      &:hover {
+        transform: scale(1.04);
+        transition: 0.3s;
+        cursor: pointer;
+      }
       width: 100%;
       background-color: white;
       border-top-left-radius: 15px;

@@ -1,3 +1,44 @@
+.image-container img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 300px;
+  display: block;
+}
+
+.menus-container {
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  background-color: rgb(246, 246, 246);
+  padding: 20px;
+  margin-top: -20px;
+  position: sticky;
+}
+.menus-container .enseigne {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menus-container .enseigne h2 {
+  font-family: "shrikhand";
+}
+.menus-container .enseigne .like {
+  font-size: 30px;
+}
+.menus-container .enseigne .like .fa-solid {
+  display: none;
+}
+.menus-container .enseigne .like:hover .fa-regular {
+  display: none;
+}
+.menus-container .enseigne .like:hover .fa-solid {
+  display: block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
+}
+
 * {
   font-family: "roboto", italic;
 }
@@ -133,7 +174,7 @@ header i {
   gap: 25px;
   height: 400px;
 }
-@media only screen and (min-width: 800px) and (max-width: 1600px) {
+@media only screen and (min-width: 800px) and (max-width: 2600px) {
   .fonctions ul {
     flex-direction: row;
   }
@@ -145,6 +186,7 @@ header i {
   height: 73px;
   font-size: 16px;
   font-weight: 500;
+  cursor: pointer;
   border-radius: 20px;
   background-color: rgba(242, 242, 242, 0.4784313725);
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -166,7 +208,7 @@ header i {
 }
 .fonctions ul li:hover {
   transform: scale(1.04);
-  transition: 0.2s;
+  transition: 0.3s;
 }
 .fonctions ul li i {
   margin-right: 40px;
@@ -219,6 +261,11 @@ header i {
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   margin-bottom: 30px;
+}
+.restaurants .cards-container .card:hover {
+  transform: scale(1.04);
+  transition: 0.3s;
+  cursor: pointer;
 }
 @media only screen and (min-width: 800px) and (max-width: 2600px) {
   .restaurants .cards-container .card {
