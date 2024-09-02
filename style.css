@@ -133,7 +133,7 @@ header i {
   gap: 25px;
   height: 400px;
 }
-@media only screen and (min-width: 800px) and (max-width: 1440px) {
+@media only screen and (min-width: 800px) and (max-width: 1600px) {
   .fonctions ul {
     flex-direction: row;
   }
@@ -176,27 +176,59 @@ header i {
   color: rgb(147, 86, 220);
 }
 
-.rest-tit h2 {
-  margin: 50px 20px;
-  font-size: 24px;
-  font-weight: 700;
-  position: static;
-}
-
 .restaurants {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding: 20px;
   background-color: rgba(242, 242, 242, 0.4784313725);
   gap: 20px;
+}
+.restaurants .rest-tit h2 {
+  margin: 50px 20px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+}
+.restaurants .cards-container {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
   align-items: center;
 }
-@media only screen and (min-width: 800px) and (max-width: 1440px) {
-  .restaurants {
-    flex-direction: row;
+@media only screen and (min-width: 801px) and (max-width: 2600px) {
+  .restaurants .cards-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
   }
 }
-.restaurants .new {
+.restaurants .cards-container .new {
+  border: 2px solid red;
+  position: relative;
+}
+.restaurants .cards-container .card {
+  height: 251px;
+  padding-bottom: 20px;
+  width: 100%;
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  margin-bottom: 30px;
+}
+@media only screen and (min-width: 800px) and (max-width: 2600px) {
+  .restaurants .cards-container .card {
+    flex-grow: 1;
+    max-width: 100%;
+  }
+}
+.restaurants .cards-container .card::before {
+  position: absolute;
+  content: "nouveau";
   height: 29px;
   width: 80px;
   background-color: rgb(153, 226, 208);
@@ -205,51 +237,48 @@ header i {
   place-items: center;
   right: 1.5rem;
   top: 1.5rem;
+  display: none;
 }
-.restaurants .card {
-  height: 251px;
-  padding-bottom: 20px;
-  max-width: 375px;
-  background-color: white;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  margin-bottom: 30px;
-}
-@media only screen and (min-width: 800px) and (max-width: 1440px) {
-  .restaurants .card {
-    width: 100%;
+@media only screen and (min-width: 800px) and (max-width: 2600px) {
+  .restaurants .cards-container .card::before {
+    display: grid;
   }
 }
-.restaurants .card img {
+.restaurants .cards-container .card img {
   width: 100%;
   height: 70%;
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.restaurants .card .card-content {
+.restaurants .cards-container .card .card-content {
   display: flex;
   justify-content: space-between;
   padding-left: 10px;
   align-items: center;
 }
-.restaurants .card .card-content .card-text .card-title {
+.restaurants .cards-container .card .card-content .card-text .card-title {
   font-size: 17px;
   font-weight: 700;
   color: black;
 }
-.restaurants .card .card-content .card-text .card-subtitle {
+.restaurants .cards-container .card .card-content .card-text .card-subtitle {
   font-size: 16px;
   font-weight: 300;
   color: black;
 }
-.restaurants .card .card-content .card-like {
+.restaurants .cards-container .card .card-content .card-like {
   font-size: 30px;
   margin-right: 20px;
 }
-.restaurants .card .card-content .card-like .fa-solid {
+.restaurants .cards-container .card .card-content .card-like .fa-solid {
+  display: none;
+}
+.restaurants .cards-container .card .card-content .card-like:hover .fa-regular {
+  display: none;
+}
+.restaurants .cards-container .card .card-content .card-like:hover .fa-solid {
+  display: block;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -261,7 +290,7 @@ footer {
   color: white;
   padding: 40px;
 }
-@media only screen and (min-width: 800px) and (max-width: 1440px) {
+@media only screen and (min-width: 800px) and (max-width: 1600px) {
   footer {
     display: flex;
     flex-direction: row-reverse;
@@ -273,7 +302,7 @@ footer {
 footer h2 {
   font-family: "shrikhand";
 }
-@media only screen and (min-width: 800px) and (max-width: 1440px) {
+@media only screen and (min-width: 800px) and (max-width: 1600px) {
   footer div {
     display: flex;
     flex-direction: row;
