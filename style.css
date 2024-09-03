@@ -41,7 +41,12 @@
   color: transparent;
   background-image: linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
 }
-.menus-container .carte {
+.menus-container .entrees {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.menus-container .entrees .carte {
   display: flex;
   background-color: white;
   padding-left: 20px;
@@ -49,28 +54,60 @@
   justify-content: space-between;
   height: 90px;
   place-items: center;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
-.menus-container .carte .text {
+.menus-container .entrees .carte:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.menus-container .entrees .carte .text {
   padding-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.menus-container .carte .text h4 {
+.menus-container .entrees .carte .text h4 {
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.menus-container .carte .text p {
+.menus-container .entrees .carte .text p {
   font-size: 18px;
   font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.menus-container .carte .number {
+.menus-container .entrees .carte .number {
   display: flex;
   flex-direction: row;
   place-items: center;
   font-size: 24px;
   gap: 20px;
+  overflow: hidden;
+  cursor: pointer;
 }
-.menus-container .carte .number .fa-solid {
+.menus-container .entrees .carte .number:hover {
+  overflow: visible;
+}
+.menus-container .entrees .carte .number:hover .fa-solid {
+  margin-right: 0rem;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.menus-container .entrees .carte .number:hover i {
+  animation: spin 0.6s ease-in-out;
+}
+.menus-container .entrees .carte .number .fa-solid {
   background-color: rgb(153, 226, 208);
+  color: white;
   display: flex;
   height: 90px;
   width: 90px;
@@ -79,6 +116,7 @@
   place-items: center;
   align-items: center;
   justify-content: center;
+  margin-right: -6rem;
 }
 
 * {

@@ -48,42 +48,83 @@
       }
     }
   }
-  .carte {
+  .entrees {
     display: flex;
-    background-color: white;
-    padding-left: 20px;
-    border-radius: 20px;
-    justify-content: space-between;
-    height: 90px;
-    place-items: center;
-    .text {
-      padding-bottom: 20px;
-      h4 {
-        margin-bottom: 20px;
-        font-size: 24px;
-        font-weight: 500;
-      }
-      p {
-        font-size: 18px;
-        font-weight: 300;
-      }
-    }
-    .number {
+    flex-direction: column;
+    gap: 20px;
+
+    .carte {
       display: flex;
-      flex-direction: row;
+      background-color: white;
+      padding-left: 20px;
+      border-radius: 20px;
+      justify-content: space-between;
+      height: 90px;
       place-items: center;
-      font-size: 24px;
-      gap: 20px;
-      .fa-solid {
-        background-color: rgba(153, 226, 208, 1);
+      box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+      &:hover {
+        transform: scale(1.02);
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+      }
+      .text {
+        padding-bottom: 20px;
+        white-space: nowrap;
+
+        overflow: hidden;
+        h4 {
+          margin-bottom: 20px;
+          font-size: 24px;
+          font-weight: 500;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        p {
+          font-size: 18px;
+          font-weight: 300;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .number {
         display: flex;
-        height: 90px;
-        width: 90px;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
+        flex-direction: row;
         place-items: center;
-        align-items: center;
-        justify-content: center;
+        font-size: 24px;
+        gap: 20px;
+        overflow: hidden;
+        cursor: pointer;
+        &:hover {
+          overflow: visible;
+          .fa-solid {
+            margin-right: 0rem;
+            @keyframes spin {
+              0% {
+                transform: rotate(-270deg);
+              }
+              100% {
+                transform: rotate(0deg);
+              }
+            }
+          }
+          & i {
+            animation: spin 0.6s ease-in-out;
+          }
+        }
+
+        .fa-solid {
+          background-color: rgba(153, 226, 208, 1);
+          color: white;
+          display: flex;
+          height: 90px;
+          width: 90px;
+          border-top-right-radius: 20px;
+          border-bottom-right-radius: 20px;
+          place-items: center;
+          align-items: center;
+          justify-content: center;
+          margin-right: -6rem;
+        }
       }
     }
   }
