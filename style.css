@@ -46,6 +46,10 @@
   flex-direction: column;
   gap: 20px;
 }
+.menus-container .entrees h2 {
+  border-bottom: 3px solid blue;
+  width: 50px;
+}
 .menus-container .entrees .carte {
   display: flex;
   background-color: white;
@@ -117,6 +121,12 @@
   align-items: center;
   justify-content: center;
   margin-right: -6rem;
+}
+
+.bouton {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 * {
@@ -234,6 +244,7 @@ header i {
   margin-bottom: 50px;
 }
 .btn-gradient:hover {
+  background-image: linear-gradient(rgb(164, 145, 189), rgb(245, 66, 194));
   transform: scale(1.04);
   transition: 0.2s;
 }
@@ -269,7 +280,6 @@ header i {
   cursor: pointer;
   border-radius: 20px;
   background-color: rgba(242, 242, 242, 0.4784313725);
-  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 .fonctions ul li::before {
   content: counter(steps);

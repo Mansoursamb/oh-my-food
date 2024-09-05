@@ -52,6 +52,10 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    h2 {
+      border-bottom: 3px solid blue;
+      width: 50px;
+    }
 
     .carte {
       display: flex;
@@ -128,4 +132,9 @@
       }
     }
   }
+}
+.bouton {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
