@@ -19,7 +19,7 @@
   position: sticky;
   max-width: 1100px;
 }
-@media only screen and (min-width: 1000px) and (max-width: 1600px) {
+@media only screen and (min-width: 1000px) and (max-width: 2600px) {
   .menus-container {
     margin-left: 100px;
     margin-right: 20px;
@@ -103,11 +103,22 @@
   overflow: hidden;
   cursor: pointer;
 }
+.menus-container .entrees .carte .number div {
+  background-color: rgb(153, 226, 208);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  height: 90px;
+  width: 90px;
+  margin-right: -6rem;
+  display: grid;
+  place-items: center;
+}
 .menus-container .entrees .carte .number:hover {
   overflow: visible;
 }
-.menus-container .entrees .carte .number:hover .fa-solid {
+.menus-container .entrees .carte .number:hover div {
   margin-right: 0rem;
+  transition: 0.3s ease-in-out;
 }
 @keyframes spin {
   0% {
@@ -121,17 +132,11 @@
   animation: spin 0.6s ease-in-out;
 }
 .menus-container .entrees .carte .number .fa-solid {
-  background-color: rgb(153, 226, 208);
-  color: white;
   display: flex;
-  height: 90px;
-  width: 90px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  place-items: center;
-  align-items: center;
-  justify-content: center;
-  margin-right: -6rem;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: white;
 }
 
 .bouton {
