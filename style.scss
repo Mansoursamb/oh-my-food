@@ -17,6 +17,7 @@
 a {
   text-decoration: none;
   list-style-type: none;
+  color: black;
 }
 body {
   display: flex;
@@ -325,7 +326,7 @@ footer {
     flex-direction: row-reverse;
     gap: 30px;
     align-items: flex-start;
-    padding-top: 50px;
+    padding-top: 30px;
   }
 
   h2 {
@@ -338,7 +339,6 @@ footer {
       gap: 30px;
       align-items: center;
       justify-content: center;
-      padding-top: 30px;
     }
   }
   p {
