@@ -1,3 +1,7 @@
+.header .fa-solid {
+  visibility: visible;
+}
+
 .image-container img {
   object-fit: cover;
   object-position: center;
@@ -13,6 +17,13 @@
   padding: 30px;
   margin-top: -38px;
   position: sticky;
+  max-width: 1100px;
+}
+@media only screen and (min-width: 1000px) and (max-width: 1600px) {
+  .menus-container {
+    margin-left: 100px;
+    margin-right: 20px;
+  }
 }
 .menus-container .enseigne {
   display: flex;
@@ -177,11 +188,18 @@ header .header {
   text-align: center;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
   z-index: 1;
+  position: relative;
 }
 header .header h1 {
   font-family: "shrikhand";
   font-size: 30px;
   cursor: pointer;
+}
+header .header .fa-solid {
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  font-size: 25px;
 }
 header .location {
   display: flex;
@@ -219,12 +237,22 @@ header i {
   margin-bottom: 0px;
   margin-top: 50px;
 }
+@media only screen and (min-width: 800px) and (max-width: 2600px) {
+  .infos h2 br {
+    display: none;
+  }
+}
 .infos p {
   font-weight: 300;
   font-size: 16px;
   line-height: 21.09px;
   color: rgb(53, 53, 53);
   margin-top: 0px;
+}
+@media only screen and (min-width: 800px) and (max-width: 2600px) {
+  .infos p br {
+    display: none;
+  }
 }
 
 .btn {
@@ -250,7 +278,7 @@ header i {
 }
 
 .fonctionnement h2 {
-  margin: 50px 20px;
+  margin: 30px 20px;
   font-size: 24px;
   font-weight: 700;
 }
@@ -316,7 +344,7 @@ header i {
   gap: 20px;
 }
 .restaurants .rest-tit h2 {
-  margin: 50px 20px;
+  margin: 30px 20px;
   font-size: 24px;
   font-weight: 700;
   text-align: left;
@@ -337,13 +365,10 @@ header i {
     align-items: center;
   }
 }
-.restaurants .cards-container .new {
-  border: 2px solid red;
-  position: relative;
-}
 .restaurants .cards-container .card {
   height: 251px;
   padding-bottom: 20px;
+  position: relative;
   width: 100%;
   background-color: white;
   border-top-left-radius: 15px;
@@ -363,7 +388,47 @@ header i {
     max-width: 100%;
   }
 }
-.restaurants .cards-container .card::before {
+.restaurants .cards-container img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.restaurants .cards-container .card-content {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  align-items: center;
+}
+.restaurants .cards-container .card-content .card-text .card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: black;
+}
+.restaurants .cards-container .card-content .card-text .card-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: black;
+}
+.restaurants .cards-container .card-content .card-like {
+  font-size: 30px;
+  margin-right: 20px;
+}
+.restaurants .cards-container .card-content .card-like .fa-solid {
+  display: none;
+}
+.restaurants .cards-container .card-content .card-like:hover .fa-regular {
+  display: none;
+}
+.restaurants .cards-container .card-content .card-like:hover .fa-solid {
+  display: block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
+}
+.restaurants .new::before {
   position: absolute;
   content: "nouveau";
   height: 29px;
@@ -374,52 +439,11 @@ header i {
   place-items: center;
   right: 1.5rem;
   top: 1.5rem;
-  display: none;
 }
-@media only screen and (min-width: 800px) and (max-width: 2600px) {
-  .restaurants .cards-container .card::before {
-    display: grid;
+@media only screen and (max-width: 800px) {
+  .restaurants .new::before {
+    display: none;
   }
-}
-.restaurants .cards-container .card img {
-  width: 100%;
-  height: 70%;
-  object-fit: cover;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-.restaurants .cards-container .card .card-content {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 10px;
-  align-items: center;
-}
-.restaurants .cards-container .card .card-content .card-text .card-title {
-  font-size: 17px;
-  font-weight: 700;
-  color: black;
-}
-.restaurants .cards-container .card .card-content .card-text .card-subtitle {
-  font-size: 16px;
-  font-weight: 300;
-  color: black;
-}
-.restaurants .cards-container .card .card-content .card-like {
-  font-size: 30px;
-  margin-right: 20px;
-}
-.restaurants .cards-container .card .card-content .card-like .fa-solid {
-  display: none;
-}
-.restaurants .cards-container .card .card-content .card-like:hover .fa-regular {
-  display: none;
-}
-.restaurants .cards-container .card .card-content .card-like:hover .fa-solid {
-  display: block;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
 }
 
 footer {
