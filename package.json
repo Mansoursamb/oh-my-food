@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Mansoursamb/oh-my-food#readme",
   "devDependencies": {
     "sass": "^1.77.8"
+  },
+  "dependencies": {
+    "oh-my-food": "file:"
   }
 }
