@@ -30,17 +30,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    margin-right: 0;
     h2 {
       font-family: "shrikhand";
       font-size: 28px;
       font-weight: 400;
+      margin-right: 20px;
     }
     .card-like {
       font-size: 20px;
-      margin-right: 20px;
+
       position: relative;
+
       cursor: pointer;
+
       .fa-regular {
         font-size: 30px;
 
@@ -49,8 +52,7 @@
 
       .fa-solid {
         position: absolute;
-        top: 0;
-        left: 0;
+
         font-size: 30px;
 
         color: transparent; /* Masque le texte au départ */
