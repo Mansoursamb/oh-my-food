@@ -159,7 +159,7 @@ header {
   &:hover {
     background-image: linear-gradient(rgb(164, 145, 189), rgb(245, 66, 194));
     transform: scale(1.04);
-    transition: 0.2s;
+    transition: 3s ease-in-out;
   }
 }
 .fonctionnement h2 {
@@ -186,7 +186,7 @@ header {
     list-style-type: none;
     width: 100%;
     max-width: 343px;
-    height: 73px;
+    height: 75px;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
@@ -285,41 +285,63 @@ header {
       display: flex;
       justify-content: space-between;
       padding-left: 10px;
+      padding-bottom: 20px;
       align-items: center;
 
-      .card-text {
+      .card-txt {
         .card-title {
           font-size: 17px;
           font-weight: 700;
           color: black;
+          margin-bottom: 0;
         }
         .card-subtitle {
           font-size: 16px;
           font-weight: 300;
           color: black;
+          margin-top: 10px;
         }
       }
       .card-like {
-        font-size: 30px;
-
+        font-size: 20px;
         margin-right: 20px;
-        .fa-solid {
-          display: none;
+        position: relative;
+
+        .fa-regular {
+          font-size: 30px;
+
+          /* Cœur en contour visible par défaut */
         }
+
+        .fa-solid {
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-size: 30px;
+
+          color: transparent; /* Masque le texte au départ */
+          background-image: linear-gradient(
+            rgba(147, 86, 220, 1),
+            rgba(255, 121, 218, 1)
+          );
+          background-clip: text;
+          -webkit-background-clip: text; /* Nécessaire pour Safari */
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 3s ease-in-out, visibility 0s 3s; /* Ajout de la transition pour l'opacité */
+        }
+
         &:hover {
           .fa-regular {
-            display: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
           }
-          .fa-solid {
-            display: block;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
 
-            background-image: linear-gradient(
-              rgba(147, 86, 220, 1),
-              rgba(255, 121, 218, 1)
-            );
+          .fa-solid {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 3s ease-in-out, visibility 0s 0s;
           }
         }
       }
@@ -342,32 +364,41 @@ header {
 }
 
 footer {
+  font-family: "roboto";
   background-color: rgba(53, 53, 53, 1);
   color: white;
   padding: 40px;
+
   @media only screen and (min-width: 800px) {
     display: flex;
     flex-direction: row-reverse;
     gap: 30px;
     align-items: flex-start;
     padding-top: 30px;
+    height: 90px;
   }
 
   h2 {
     font-family: "shrikhand";
+    margin-bottom: 50px;
+    margin-top: 10px;
+    @media only screen and (min-width: 800px) {
+      margin-top: 60px;
+      margin-left: 60px;
+    }
   }
   div {
     @media only screen and (min-width: 800px) {
       display: flex;
       flex-direction: row;
       gap: 30px;
-      align-items: center;
-      justify-content: center;
+      margin-top: 50px;
+      flex-wrap: nowrap;
     }
   }
   p {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     i {
       margin-right: 10px;
       font-size: 25px;

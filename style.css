@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .header .fa-solid {
   visibility: visible;
 }
@@ -19,7 +20,7 @@
   position: sticky;
   max-width: 1100px;
 }
-@media only screen and (min-width: 1000px) and (max-width: 2600px) {
+@media only screen and (min-width: 800px) {
   .menus-container {
     margin-left: 100px;
     margin-right: 20px;
@@ -37,7 +38,7 @@
 }
 .menus-container .enseigne .like {
   font-size: 30px;
-  margin-right: 30px;
+  margin-right: 0px;
 }
 .menus-container .enseigne .like .fa-solid {
   display: none;
@@ -56,6 +57,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
+  padding-right: 20px;
 }
 .menus-container .entrees h2 {
   border-bottom: 3px solid rgb(153, 226, 208);
@@ -67,19 +70,12 @@
   padding-left: 20px;
   border-radius: 20px;
   justify-content: space-between;
-  height: 90px;
+  height: 97px;
+  min-width: none;
+  width: 100%;
   place-items: center;
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-}
-@keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
+  animation: appear 3s;
 }
 .menus-container .entrees .carte:nth-child(2) {
   animation-fill-mode: both;
@@ -98,6 +94,31 @@
   transition: 0.3s ease-in-out;
   cursor: pointer;
 }
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+.menus-container .entrees .carte:hover .number div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 0rem;
+  transition: margin-right 5s allow-discrete;
+  animation: 700ms linear alternate slide;
+}
+@keyframes slide {
+  from {
+    margin-right: -6rem;
+  }
+  to {
+    margin-right: 0;
+  }
+}
 .menus-container .entrees .carte .text {
   white-space: nowrap;
   margin-bottom: 30px;
@@ -109,6 +130,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 0;
+  padding-top: 10px;
 }
 .menus-container .entrees .carte .text p {
   font-size: 18px;
@@ -128,26 +150,19 @@
 .menus-container .entrees .carte .number p {
   margin-right: 15px;
   margin-top: 50px;
+  font-weight: 600;
 }
 .menus-container .entrees .carte .number div {
   background-color: rgb(153, 226, 208);
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  height: 90px;
-  width: 90px;
+  height: 97px;
+  width: 97px;
   display: flex;
   display: none;
   justify-content: center;
   align-items: center;
-  margin-right: -6rem;
-}
-.menus-container .entrees .carte .number:hover {
-  overflow: visible;
-}
-.menus-container .entrees .carte .number:hover div {
-  display: flex;
-  margin-right: 0rem;
-  transition: 3s ease-in-out;
+  margin-right: -3rem;
 }
 .menus-container .entrees .carte .number .fa-solid {
   color: rgb(153, 226, 208);
@@ -325,7 +340,7 @@ header i {
 .btn-gradient:hover {
   background-image: linear-gradient(rgb(164, 145, 189), rgb(245, 66, 194));
   transform: scale(1.04);
-  transition: 0.2s;
+  transition: 3s ease-in-out;
 }
 
 .fonctionnement h2 {
@@ -356,7 +371,7 @@ header i {
   list-style-type: none;
   width: 100%;
   max-width: 343px;
-  height: 73px;
+  height: 75px;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
@@ -453,34 +468,52 @@ header i {
   display: flex;
   justify-content: space-between;
   padding-left: 10px;
+  padding-bottom: 20px;
   align-items: center;
 }
-.restaurants .cards-container .card-content .card-text .card-title {
+.restaurants .cards-container .card-content .card-txt .card-title {
   font-size: 17px;
   font-weight: 700;
   color: black;
+  margin-bottom: 0;
 }
-.restaurants .cards-container .card-content .card-text .card-subtitle {
+.restaurants .cards-container .card-content .card-txt .card-subtitle {
   font-size: 16px;
   font-weight: 300;
   color: black;
+  margin-top: 10px;
 }
 .restaurants .cards-container .card-content .card-like {
-  font-size: 30px;
+  font-size: 20px;
   margin-right: 20px;
+  position: relative;
+}
+.restaurants .cards-container .card-content .card-like .fa-regular {
+  font-size: 30px;
+  /* Cœur en contour visible par défaut */
 }
 .restaurants .cards-container .card-content .card-like .fa-solid {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+  color: transparent; /* Masque le texte au départ */
+  background-image: linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
+  background-clip: text;
+  -webkit-background-clip: text; /* Nécessaire pour Safari */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 3s ease-in-out, visibility 0s 3s; /* Ajout de la transition pour l'opacité */
 }
 .restaurants .cards-container .card-content .card-like:hover .fa-regular {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
 }
 .restaurants .cards-container .card-content .card-like:hover .fa-solid {
-  display: block;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 3s ease-in-out, visibility 0s 0s;
 }
 .restaurants .new::before {
   position: absolute;
@@ -496,6 +529,7 @@ header i {
 }
 
 footer {
+  font-family: "roboto";
   background-color: rgb(53, 53, 53);
   color: white;
   padding: 40px;
@@ -507,23 +541,32 @@ footer {
     gap: 30px;
     align-items: flex-start;
     padding-top: 30px;
+    height: 90px;
   }
 }
 footer h2 {
   font-family: "shrikhand";
+  margin-bottom: 50px;
+  margin-top: 10px;
+}
+@media only screen and (min-width: 800px) {
+  footer h2 {
+    margin-top: 60px;
+    margin-left: 60px;
+  }
 }
 @media only screen and (min-width: 800px) {
   footer div {
     display: flex;
     flex-direction: row;
     gap: 30px;
-    align-items: center;
-    justify-content: center;
+    margin-top: 50px;
+    flex-wrap: nowrap;
   }
 }
 footer p {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
 }
 footer p i {
   margin-right: 10px;
