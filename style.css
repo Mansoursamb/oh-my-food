@@ -350,24 +350,27 @@ header i {
   font-weight: 700;
 }
 
-.fonctions ul {
+.fonctions {
   counter-reset: steps;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
   gap: 25px;
-  height: 200px;
+  height: 250px;
+  margin-left: 0;
+  padding: 20px;
 }
 @media only screen and (min-width: 800px) {
-  .fonctions ul {
+  .fonctions {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    height: 75px;
+    padding: 10px;
+    padding-left: 15px;
   }
 }
-.fonctions ul li {
+.fonctions li {
   list-style-type: none;
   width: 100%;
   max-width: 343px;
@@ -375,10 +378,13 @@ header i {
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   background-color: rgba(242, 242, 242, 0.4784313725);
+  display: flex;
+  align-items: center;
 }
-.fonctions ul li::before {
+.fonctions li::before {
   content: counter(steps);
   counter-increment: steps;
   color: white;
@@ -389,19 +395,19 @@ header i {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  top: 30%;
-  right: 3%;
+  margin-left: -14px;
+  margin-right: 20px;
+  margin-top: 5px;
 }
-.fonctions ul li:hover {
+.fonctions li:hover {
   transform: scale(1.04);
   transition: 0.3s;
 }
-.fonctions ul li i {
+.fonctions li i {
   margin-right: 40px;
   font-size: 18px;
 }
-.fonctions ul li #store {
+.fonctions li #store {
   color: rgb(147, 86, 220);
 }
 
@@ -547,11 +553,12 @@ footer {
 footer h2 {
   font-family: "shrikhand";
   margin-bottom: 50px;
-  margin-top: 10px;
+  margin-top: 0px;
+  cursor: pointer;
 }
 @media only screen and (min-width: 800px) {
   footer h2 {
-    margin-top: 60px;
+    margin-top: 55px;
     margin-left: 60px;
   }
 }
@@ -560,15 +567,18 @@ footer h2 {
     display: flex;
     flex-direction: row;
     gap: 30px;
-    margin-top: 50px;
+    margin-top: 60px;
     flex-wrap: nowrap;
   }
 }
-footer p {
+footer a {
+  display: block;
   font-size: 20px;
   font-weight: 500;
+  color: white;
+  margin-bottom: 20px;
 }
-footer p i {
+footer a i {
   margin-right: 10px;
   font-size: 25px;
 }
