@@ -36,25 +36,46 @@
       font-size: 28px;
       font-weight: 400;
     }
-    .like {
-      font-size: 30px;
-      margin-right: 0px;
-      .fa-solid {
-        display: none;
+    .card-like {
+      font-size: 20px;
+      margin-right: 20px;
+      position: relative;
+      cursor: pointer;
+      .fa-regular {
+        font-size: 30px;
+
+        /* Cœur en contour visible par défaut */
       }
+
+      .fa-solid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 30px;
+
+        color: transparent; /* Masque le texte au départ */
+        background-image: linear-gradient(
+          rgba(147, 86, 220, 1),
+          rgba(255, 121, 218, 1)
+        );
+        background-clip: text;
+        -webkit-background-clip: text; /* Nécessaire pour Safari */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 3s ease-in-out, visibility 0s 3s; /* Ajout de la transition pour l'opacité */
+      }
+
       &:hover {
         .fa-regular {
-          display: none;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
         }
+
         .fa-solid {
-          display: block;
-          background-clip: text;
-          -webkit-background-clip: text;
-          color: transparent;
-          background-image: linear-gradient(
-            rgba(147, 86, 220, 1),
-            rgba(255, 121, 218, 1)
-          );
+          opacity: 1;
+          visibility: visible;
+          transition: opacity 3s ease-in-out, visibility 0s 0s;
         }
       }
     }
